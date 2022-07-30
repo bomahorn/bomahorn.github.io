@@ -1,0 +1,25 @@
+﻿Make,Fuel,EngineCylinders,AverageHighwayMPG,AverageCityMPG,year
+Acura,Gasoline,4,35,25,1980
+Acura,Gasoline,6,28,21,1981
+Acura,Gasoline,4,33,24,1993
+Acura,Gasoline,12,24,17,1994
+Alfa Romeo,Gasoline,4,30,23,1980
+Alfa Romeo,Gasoline,6,27,19,1981
+Alfa Romeo,Gasoline,8,26,17,1993
+Alfa Romeo,Gasoline,10,22,14,1994
+Aston Martin,Gasoline,4,32,24,1980
+Aston Martin,Gasoline,8,22,13,1981
+Aston Martin,Gasoline,12,20,12,1993
+Aston Martin,Gasoline,4,41,30,1994
+Audi,Gasoline,6,29,23,1980
+Audi,Diesel,0,109,133,1981
+Audi,Diesel,2,33,36,1993
+Audi,Electricity,3,29,28,1994
+Bentley,Gasoline,4,32,23,1980
+Bentley,Gasoline,6,28,19,1981
+Bentley,Gasoline,8,23,15,1993
+Bentley,Gasoline,12,20,13,1994
+BMW,Gasoline,8,23,15,1980
+BMW,Gasoline,12,20,13,1981
+BMW,Gasoline,8,21,14,1993
+BMW,Gasoline,3,40,29,1994
