@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Narrative Chart</title>
+      <title>Narrative Chart by Michaela Horn</title>
    </head>
-   <h2> Narrative Car Performance Visualization Chart by Michaela Horn</h2>
    <style> 
       #barchart rect { fill: steelblue; } 
       #tooltip {
@@ -71,7 +70,8 @@
          <!-- Load d3-annotation -->
          <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
 
-         <a href="https://michaelahorn97.github.io/Chart2.html" target="_parent" class="next">Next &raquo;</a>
+         <a href="https://michaelahorn97.github.io/index.html" target="_parent" class="previous">&laquo; Previous</a>
+         <a href="https://michaelahorn97.github.io/Chart3.html" target="_parent" class="next">Next &raquo;</a>
 
          <!-- Create a button to trigger the transition -->
          <button onclick="triggerTransition()">Click to move the car</button>
@@ -95,8 +95,8 @@
          <script>
             function triggerTransition(){
                var audio = new Audio("data/mixkit-car-double-horn-719.wav");
-                   audio.play();
-                   audio.currentTime=0;
+               audio.play();
+               audio.currentTime=0;
 
                d3.select("#rectArea")
                .transition().duration(4000).delay(500)
@@ -130,7 +130,7 @@
       
 
         var g = svg.append("g")
-            .attr("transform", "translate(" + 100 + "," + 50 + ")");
+            .attr("transform", "translate(" + 100 + "," + 0 + ")");
 
         // Title
         svg.append('text')
@@ -139,7 +139,7 @@
         .attr('text-anchor', 'middle')
         .style('font-family', 'Helvetica')
         .style('font-size', 20)
-        .text('Average City MPG');
+        .text('Average Highway MPG');
         
         // X label
         svg.append('text')
@@ -159,11 +159,10 @@
         .text('Miles Per Gallon');
 
         g.append("g")
-         .attr("transform", "translate(0," + (height - 50) + ")")
+         .attr("transform", "translate(0," + (height) + ")")
          .call(d3.axisBottom(xScale));
         
         g.append("g")
-         .attr("transform", "translate(0," + (height - 400) + ")")
          .call(d3.axisLeft(yScale));
       
         var tooltip = d3.select("#tooltip");
@@ -181,14 +180,14 @@
                   tooltip.style("opacity", 1)
                      .style("left", (d3.event.pageX)+"px")
                      .style("top", (d3.event.pageY)+"px")
-                     .html(d.Make +" MPG: "+ d.AverageCityMPG + " Fuel-Type: " + d.Fuel);
+                     .html(d.Make +" MPG: "+ d.AverageHighwayMPG + " Fuel-Type: " + d.Fuel);
                 })
            .on("mouseout", function() { tooltip.style("opacity", 0) })    
            .transition().duration(3000).delay(1000)
-           .attr("height", function(d){ return height - yScale(d.AverageCityMPG); })
-           .attr('y', function(d){ return yScale(d.AverageCityMPG); }) // This flips the chart because 0,0 is the top left hand corner 
+           .attr("height", function(d){ return height - yScale(d.AverageHighwayMPG); })
+           .attr('y', function(d){ return yScale(d.AverageHighwayMPG); }) // This flips the chart because 0,0 is the top left hand corner 
            .style("fill", function(d) {
-               if ( d.AverageCityMPG == 12) 
+               if ( d.AverageHighwayMPG == 19) 
                      {return "gold"}
                else if(d.Fuel == "Electricity")
                      { return "green"}
@@ -203,7 +202,7 @@
             const annotationsAston = [
             {
                note: {
-                  label: "Fuel type: Gasoline. 12 MPG",
+                  label: "Fuel type: Gasoline. 19 MPG",
                   align:"left",
                   title: "Aston Martin"
                },
@@ -215,7 +214,7 @@
                },
                color: ["purple"],
                x: 230,
-               y: 320,
+               y: 300,
                dy: -70,
                dx: -70
             }
@@ -228,41 +227,11 @@
             .append("g")
             .call(makeAnnotationsAston)
 
-            // ==== Bentley ====== //
-            const annotationsBentley = [
-            {
-               note: {
-                  label: "Fuel type: Gasoline. 12 MPG",
-                  align:"left",
-                  title: "Bentley"
-               },
-               connector: {
-                  end: "arrow",        // none, or arrow or dot
-                  type: "line",       // Line or curve
-                  points: 3,           // Number of break in the curve
-                  lineType : "vertical",
-                  align: "top"
-               },
-               color: ["purple"],
-               x: 440,
-               y: 320,
-               dy: -70,
-               dx: -70
-            }
-            ]
-
-            // Add annotation to the chart
-            const makeAnnotationsBentley = d3.annotation()
-            .annotations(annotationsBentley)
-            d3.select("#barchart")
-            .append("g")
-            .call(makeAnnotationsBentley)
-
             // ==== BMW====== //
             const annotationsBMW = [
             {
                note: {
-                  label: "Fuel type: Electricity, 133 MPG",
+                  label: "Fuel type: Electricity, 109 MPG",
                   title: "BMW"
                },
                connector: {
@@ -273,7 +242,7 @@
                },
                color: ["purple"],
                x: 550,
-               y: 100,
+               y: 120,
                dy: 70,
                dx: 70
             }
@@ -294,7 +263,7 @@
             d3.select("#barchart").selectAll(".connector-end")
             .attr('stroke', "blue")
             .attr('fill', "blue")
-            
+
             </script>
    </body>
 </html>
