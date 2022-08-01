@@ -3,6 +3,10 @@
    <head>
       <title>Narrative Chart</title>
    </head>
+   <a href="Chart2.html" target="_parent" class="previous">&laquo; Previous</a>
+   <script src="http://d3js.org/d3.v5.min.js"></script>
+   <!-- Load d3-annotation -->
+   <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
    <style> 
       h3 {text-align: center;}
       p  {text-align: left;}
@@ -70,13 +74,6 @@
       </style>
    <body onload='init()'>
       <div id="wrapper"></div>
-      <script src="http://d3js.org/d3.v5.min.js"></script>
-      <script src="https://d3js.org/d3-array.v2.min.js"></script>
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.3.1/d3-annotation.min.js"></script>
-         <!-- Load d3-annotation -->
-         <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
-
-         <a href="https://michaelahorn97.github.io/Chart2.html" target="_parent" class="previous">&laquo; Previous</a>
 
          <!-- Create a button to trigger the transition -->
          <button onclick="triggerTransition()">Click to move the car</button>
