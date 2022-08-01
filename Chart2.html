@@ -10,7 +10,6 @@
    <!-- Load d3-annotation -->
   <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
 
-
    <style> 
       #barchart rect { fill: steelblue; } 
       #tooltip {
@@ -95,9 +94,9 @@
          </div>
          <script>
             function triggerTransition(){
-               var audio = new Audio("data/mixkit-car-double-horn-719.wav");
-               audio.play();
-               audio.currentTime=0;
+               // var audio = new Audio("data/mixkit-car-double-horn-719.wav");
+               // audio.play();
+               // audio.currentTime=0;
 
                d3.select("#rectArea")
                .transition().duration(4000).delay(500)
@@ -119,7 +118,7 @@
       </svg>
       <script type="text/javascript">
          async function init() {
-          const data_values = await d3.csv('https://flunky.github.io/cars2017.csv');
+          const data_values = await d3.csv('https://raw.githubusercontent.com/bomahorn/bomahorn.github.io/main/data/cars2017.csv');
 
         var svg = d3.select("#barchart"),
             margin = 200,
